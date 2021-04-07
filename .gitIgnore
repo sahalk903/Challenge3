@@ -1,8 +1,12 @@
-.project
 .classpath
-*.class
-bin/
 .settings/
+.project
+bin/
+*.class
+out/
 .idea/
 *.iml
-.DS_Store
+.DS_STORE
+.env
+Test.java
+target/
