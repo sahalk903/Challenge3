@@ -24,4 +24,10 @@ public class App extends JFrame{
         setVisible(true);
 
     }
+
+    public void toggleDarkMode(){
+        //dark mode
+    }
+
+
 }
