@@ -17,10 +17,37 @@ public class MenuBar extends JMenuBar {
             }
         });
 
+        JMenuItem lightMode = new JMenuItem("Light Mode");
+        addToken.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //switch to light mode here
+
+                // ;
+            }
+        });
+
+        JMenuItem darkMode = new JMenuItem("Dark Mode");
+        addToken.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //switch to dark mode here
+                // toggleDarkMode();
+            }
+        });
+
 
         JMenu configure = new JMenu("Configure");
         this.add(configure);
         configure.add(addToken);
+
+
+        JMenu view = new JMenu("View");
+        this.add(view);
+        view.add(darkMode);
+        view.add(lightMode);
 
 
 
