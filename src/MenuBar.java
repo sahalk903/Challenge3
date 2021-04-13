@@ -4,9 +4,11 @@ import java.awt.event.ActionListener;
 
 public class MenuBar extends JMenuBar {
 
-    public MenuBar(){
+	private App app;
+	
+    public MenuBar(App app){
         super();
-
+        this.app = app;
         //create menu items
         JMenuItem addToken = new JMenuItem("Add Token");
         addToken.addActionListener(new ActionListener(){
@@ -18,23 +20,22 @@ public class MenuBar extends JMenuBar {
         });
 
         JMenuItem lightMode = new JMenuItem("Light Mode");
-        addToken.addActionListener(new ActionListener(){
+        lightMode.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 //switch to light mode here
-
-                // ;
+            	app.toggleLightMode();
             }
         });
 
         JMenuItem darkMode = new JMenuItem("Dark Mode");
-        addToken.addActionListener(new ActionListener(){
+        darkMode.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 //switch to dark mode here
-                // toggleDarkMode();
+                app.toggleDarkMode();
             }
         });
 
@@ -48,10 +49,6 @@ public class MenuBar extends JMenuBar {
         this.add(view);
         view.add(darkMode);
         view.add(lightMode);
-
-
-
-
         setVisible(true);
     }
 
