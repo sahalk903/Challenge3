@@ -17,17 +17,28 @@ public class App extends JFrame{
         setLayout(new BorderLayout());
 
         //add toolbar
-        menuBar = new MenuBar();
+        menuBar = new MenuBar(this);
         this.add(menuBar, BorderLayout.NORTH);
 
         //set visible
         setVisible(true);
-
     }
 
     public void toggleDarkMode(){
         //dark mode
+    	getContentPane().setBackground(Color.gray);
+    	menuBar.setBackground(Color.gray);
+    	menuBar.getMenu(0).getMenuComponent(0).setBackground(Color.gray);
+    	menuBar.getMenu(1).getMenuComponent(0).setBackground(Color.gray);
+    	menuBar.getMenu(1).getMenuComponent(1).setBackground(Color.gray);
     }
-
-
+    
+    public void toggleLightMode(){
+        //light mode
+    	getContentPane().setBackground(Color.white);
+    	menuBar.setBackground(Color.white);
+    	menuBar.getMenu(0).getMenuComponent(0).setBackground(Color.white);
+    	menuBar.getMenu(1).getMenuComponent(0).setBackground(Color.white);
+    	menuBar.getMenu(1).getMenuComponent(1).setBackground(Color.white);
+    }
 }
