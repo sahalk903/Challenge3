@@ -11,14 +11,13 @@ public class MenuBar extends JMenuBar {
         super();
         this.app = app;
         isDark = false;
-        MenuBar m = this;
         //create menu items
         JMenuItem addToken = new JMenuItem("Add Token");
         addToken.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                new TokenWindow(m);
+                new TokenWindow(isDark);
             }
         });
 
