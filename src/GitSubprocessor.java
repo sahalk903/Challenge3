@@ -1,28 +1,41 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import git.tools.client.GitSubprocessClient;
 
 public class GitSubprocessClient {
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
-    String gitInit = gitSubprocessClient.getInit();
-    String gitRemoteAdd = gitSubprocessClient.getRemoteAdd("origin", "https://github.com/CSC109/GitSubprocessClient.git");
-    String gitAddFile = gitSubprocessClient.gitAddFile("GitSubprocessClient.java");
-    String gitAddAll = gitSubprocessClient.gitAddAll();
-    String commitMessage = "This is a commit message";
-    String commit = gitSubprocessClient.gitCommit(commitMessage);
-    String push = gitSubprocessClient.gitPush("master");
-    String status = gitSubprocessClient.gitStatus();
-    String log = gitSubprocessClient.gitLog(5);
-    String log = gitSubprocessClient.gitLogOneLine(5);
-    String log = gitSubprocessClient.gitLogAll();
-    String log = gitSubprocessClient.gitLogAllOneLine();
-    String checkout = gitSubprocessClient.switchBranch("master");
-    String createBranch = gitSubprocessClient.createBranch("new-branch");
-    String createBranch = gitSubprocessClient.createAndSwitchBranch("new-branch");
-    String deleteBranch = gitSubprocessClient.deleteBranch("new-branch");
-    String branches = gitSubprocessClient.listBranches();
-    String pull = gitSubprocessClient.gitPull("master");
-    String fetch = gitSubprocessClient.gitFetch("master");
-    String fetch = gitSubprocessClient.gitFetchAll();
-    String stash = gitSubprocessClient.gitStash();
-    String stashApply = gitSubprocessClient.gitStashApply();
-    String clone = gitSubprocessClient.gitClone();
-    String commit = gitSubprocessClient.runGitCommand("push origin master");
-    }
+
+
+ public class Button extends JFrame {
+     protected JTextField commitMessage;
+     private JButton button;
+
+
+     // JTextField commit message
+
+        this.add(new JLabel("Commit Message"));
+        commitMessage = new JTextField();
+        commitMessage.setColumns(30);
+        this.add(commitMessage);
+
+        // Button to call add, commit, push
+
+     button = new JButton("button");
+        enter.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed (ActionEvent e){
+             gitSubprocessClient.gitPush("master");
+             gitSubprocessClient.gitAddAll();
+
+         }
+     }
+
+         this.add(enter);
+         this.setVisible(true);
+
+ }
+}
+
+
