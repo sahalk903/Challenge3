@@ -28,6 +28,7 @@ public class GitSubprocessClient {
          public void actionPerformed (ActionEvent e){
              gitSubprocessClient.gitPush("master");
              gitSubprocessClient.gitAddAll();
+             gitSubprocessClient.gitCommit(commitMessage);
 
          }
      }
