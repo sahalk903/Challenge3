@@ -1,3 +1,5 @@
+import github.tools.client.GitHubApiClient;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +10,7 @@ public class App extends JFrame{
     }
 
     private MenuBar menuBar;
+    private GitHubApiClient client;
 
     App(){
         //set up window
@@ -27,6 +30,10 @@ public class App extends JFrame{
 
     public void toggleDarkMode(){
         //dark mode
+    }
+
+    public void setClient(GitHubApiClient client){
+        this.client = client;
     }
 
 

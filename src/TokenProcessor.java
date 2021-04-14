@@ -4,13 +4,11 @@ import github.tools.responseObjects.*;
 public class TokenProcessor {
     private String token;
     private String username;
-    private GitHubApiClient gitHubApiClient;
+    public GitHubApiClient client;
 
     TokenProcessor(){
         username = null;
         token = null;
-
-        gitHubApiClient = new GitHubApiClient(username, token);
     }
 
     public void setToken(String token) {
@@ -29,5 +27,13 @@ public class TokenProcessor {
 
     public String getUsername(){
         return username;
+    }
+
+    public GitHubApiClient getAPIClient(){
+        return client;
+    }
+
+    public void createClient(){
+        client = new GitHubApiClient(username, token);
     }
 }
