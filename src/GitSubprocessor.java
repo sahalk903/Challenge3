@@ -8,7 +8,7 @@ public class GitSubprocessClient {
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
 
 
- public class Button extends JFrame {
+    public class Button extends JFrame {
      protected JTextField commitMessage;
      private JButton button;
 
@@ -22,7 +22,7 @@ public class GitSubprocessClient {
 
         // Button to call add, commit, push
 
-     button = new JButton("button");
+        button = new JButton("button");
         enter.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed (ActionEvent e){
@@ -36,7 +36,7 @@ public class GitSubprocessClient {
          this.add(enter);
          this.setVisible(true);
 
- }
+    }
 }
 
 
