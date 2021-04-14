@@ -8,18 +8,35 @@ public class TokenWindow extends JFrame{
     protected JTextField tokenField, userField;
     private JButton enter;
     private TokenProcessor p;
+    private MenuBar menuBar;
+    private JLabel label;
+    private JPanel panel;
 
-
-    TokenWindow(){
+    TokenWindow(MenuBar menuBar){
         super("Enter Token");
         this.setSize(400, 200);
         this.setLocation(400, 400);
         this.setLayout(new FlowLayout());
+        this.menuBar = menuBar;
+        panel = new JPanel();
+        label = new JLabel("Enter GitHub Username");
+        panel.add(label);
+        this.add(panel);
 
+        if(menuBar.getMode() == true)
+        {
+        	panel.setBackground(Color.gray);
+        }
+        else
+        {
+        	panel.setBackground(Color.white);
+        }
+        
+        
         p = new TokenProcessor();
 
         //set up username field
-        this.add(new JLabel("Enter GitHub Username"));
+        this.add(label);
         userField = new JTextField();
         userField.setColumns(30);
         this.add(userField);
