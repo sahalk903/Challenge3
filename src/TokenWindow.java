@@ -46,6 +46,7 @@ public class TokenWindow extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 p.setUsername(userField.getText());
                 p.setToken(tokenField.getText());
+                p.createClient();
             }
         });
         this.add(enter);

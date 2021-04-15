@@ -1,3 +1,5 @@
+import github.tools.client.GitHubApiClient;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,8 @@ public class App extends JFrame{
     }
 
     private MenuBar menuBar;
-
+    private GitHubApiClient client;
+    Mode();
     App(){
         //set up window
         super("Challenge 3");
@@ -31,6 +34,7 @@ public class App extends JFrame{
     	menuBar.getMenu(0).getMenuComponent(0).setBackground(Color.gray);
     	menuBar.getMenu(1).getMenuComponent(0).setBackground(Color.gray);
     	menuBar.getMenu(1).getMenuComponent(1).setBackground(Color.gray);
+
     }
     
     public void toggleLightMode(){
@@ -41,4 +45,10 @@ public class App extends JFrame{
     	menuBar.getMenu(1).getMenuComponent(0).setBackground(Color.white);
     	menuBar.getMenu(1).getMenuComponent(1).setBackground(Color.white);
     }
+
+
+    public void setClient(GitHubApiClient client){
+        this.client = client;
+    }
+
 }
