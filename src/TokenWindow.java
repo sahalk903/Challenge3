@@ -9,13 +9,22 @@ public class TokenWindow extends JFrame{
     private JButton enter;
     private TokenProcessor p;
 
-
-    TokenWindow(){
+    TokenWindow(boolean isDark){
         super("Enter Token");
         this.setSize(400, 200);
         this.setLocation(400, 400);
         this.setLayout(new FlowLayout());
 
+        if(isDark == true)
+        {
+        	getContentPane().setBackground(Color.gray);
+        }
+        else
+        {
+        	getContentPane().setBackground(Color.white);
+        }
+        
+        
         p = new TokenProcessor();
 
         //set up username field

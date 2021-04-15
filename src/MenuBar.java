@@ -3,16 +3,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuBar extends JMenuBar {
+
+	private App app;
+	private boolean isDark;
 	
     public MenuBar(App app){
         super();
-        //create menu items
+        this.app = app;
+        isDark = false;
+
+      //create menu items
         JMenuItem addToken = new JMenuItem("Add Token");
         addToken.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                new TokenWindow();
+                new TokenWindow(isDark);
             }
         });
 
@@ -23,6 +29,7 @@ public class MenuBar extends JMenuBar {
             public void actionPerformed(ActionEvent e) {
                 //switch to light mode here
             	app.toggleLightMode();
+            	isDark = !isDark;
             }
         });
 
@@ -33,6 +40,7 @@ public class MenuBar extends JMenuBar {
             public void actionPerformed(ActionEvent e) {
                 //switch to dark mode here
                 app.toggleDarkMode();
+                isDark = !isDark;
             }
         });
 
@@ -49,4 +57,13 @@ public class MenuBar extends JMenuBar {
         setVisible(true);
     }
 
+    public void setMode(boolean isDark)
+    {
+    	this.isDark = isDark;
+    }
+    
+    public boolean getMode()
+    {
+    	return isDark;
+    }
 }
