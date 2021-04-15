@@ -3,12 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuBar extends JMenuBar {
-
-	private App app;
 	
     public MenuBar(App app){
         super();
-        this.app = app;
         //create menu items
         JMenuItem addToken = new JMenuItem("Add Token");
         addToken.addActionListener(new ActionListener(){
