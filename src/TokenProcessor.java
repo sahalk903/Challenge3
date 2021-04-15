@@ -9,11 +9,12 @@ public class TokenProcessor {
     TokenProcessor(){
         username = null;
         token = null;
+
+        client  = new GitHubApiClient(username, token);
     }
 
     public void setToken(String token) {
         this.token = token;
-        System.out.println("Token entered: " + token);
     }
 
     public String getToken() {
@@ -22,7 +23,7 @@ public class TokenProcessor {
 
     public void setUsername(String username){
         this.username = username;
-        System.out.println("Username entered: " + username);
+
     }
 
     public String getUsername(){

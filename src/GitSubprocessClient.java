@@ -1,7 +1,0 @@
-
-public class GitSubprocessClient {
-    GitSubprocessClient(){
-
-    }
-}
-

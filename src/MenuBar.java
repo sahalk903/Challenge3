@@ -11,7 +11,8 @@ public class MenuBar extends JMenuBar {
         super();
         this.app = app;
         isDark = false;
-        //create menu items
+
+      //create menu items
         JMenuItem addToken = new JMenuItem("Add Token");
         addToken.addActionListener(new ActionListener(){
 

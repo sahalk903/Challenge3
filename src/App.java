@@ -11,7 +11,8 @@ public class App extends JFrame{
 
     private MenuBar menuBar;
     private GitHubApiClient client;
-    Mode();
+    private GitSubprocessor subprocessor;
+
     App(){
         //set up window
         super("Challenge 3");
@@ -22,6 +23,11 @@ public class App extends JFrame{
         //add toolbar
         menuBar = new MenuBar(this);
         this.add(menuBar, BorderLayout.NORTH);
+
+        //add git subprocessor
+        subprocessor = new GitSubprocessor();
+        this.add(subprocessor);
+
 
         //set visible
         setVisible(true);
@@ -34,6 +40,7 @@ public class App extends JFrame{
     	menuBar.getMenu(0).getMenuComponent(0).setBackground(Color.gray);
     	menuBar.getMenu(1).getMenuComponent(0).setBackground(Color.gray);
     	menuBar.getMenu(1).getMenuComponent(1).setBackground(Color.gray);
+    	subprocessor.setDarkMode();
 
     }
     
